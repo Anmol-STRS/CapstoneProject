@@ -1,0 +1,28 @@
+{
+  "name": "Project Automation",
+  "build": { "dockerfile": "Dockerfile", "context": ".." },
+
+  "remoteUser": "vscode",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "ms-python.python",
+        "ms-python.vscode-pylance"
+      ],
+      "settings": {
+        "cmake.sourceDirectory": "${workspaceFolder}/scripts",
+        "cmake.generator": "Ninja",
+        "cmake.buildDirectory": "${workspaceFolder}/.devcheck/build"
+      }
+    }
+  },
+
+  // Runs once after container building (ideal for bootstrap)
+  "postCreateCommand": "bash -lc 'chmod +x scripts/setup.sh && ./scripts/setup.sh --post-create'",
+
+  // Runs on every container start (useful for lightweight, idempotent steps)
+  "postStartCommand": "bash -lc 'scripts/setup.sh --on-start || true'"
+}

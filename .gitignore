@@ -1,0 +1,109 @@
+# ---------- OS / Editor ----------
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*.orig
+*.bak
+
+# ---------- VS Code (keep useful project files) ----------
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/tasks.json
+
+# ---------- Visual Studio (C++) ----------
+.vs/
+**/*.VC.db
+**/*.VC.opendb
+ipch/
+x64/
+x86/
+Debug/
+Release/
+
+# ---------- Generic build trees ----------
+**/build/
+**/build-*/
+[Bb]uild*/
+[Bb]in/
+[Oo]bj/
+
+# ---------- CMake ----------
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+CTestTestfile.cmake
+Makefile
+# If you use clangd and want this, remove the next line:
+compile_commands.json
+**/cmake-build-*/
+
+# ---------- Ninja ----------
+.ninja_deps
+.ninja_log
+
+# ---------- C/C++ artifacts ----------
+*.o
+*.obj
+*.lo
+*.la
+*.a
+*.lib
+*.dll
+*.so
+*.dylib
+*.exp
+*.pdb
+*.ilk
+*.exe
+
+# ---------- Python bytecode / envs / caches ----------
+__pycache__/
+*.py[cod]
+*$py.class
+.python-version
+.venv/
+venv/
+env/
+.venv_devcheck*/
+# New venv bucket used by your runner:
+.devcheck/venvs/
+
+# ---------- Python packaging / testing ----------
+build/
+dist/
+*.egg-info/
+.eggs/
+.coverage*
+.coverage.*
+.cache/
+.pytest_cache/
+.mypy_cache/
+.hypothesis/
+.ruff_cache/
+pip-wheel-metadata/
+
+# ---------- Dotenv (keep only templates) ----------
+.env
+.env.*
+!.env.example
+
+# ---------- DevCheck outputs ----------
+# Keep the config at repo root (devcheck.json), ignore generated artifacts
+.devcheck/**
+test_report*.html
+test_report*.json
+
+# ---------- Logs / temp ----------
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+
+# ---------- Devcontainer & hooks (tracked) ----------
+!.devcontainer/
+.githooks/

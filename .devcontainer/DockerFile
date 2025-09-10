@@ -1,0 +1,20 @@
+# Lightweight Ubuntu base with common dev goodies
+FROM mcr.microsoft.com/devcontainers/base:ubuntu-24.04
+
+# System toolchain for Python & C++
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+    build-essential \
+    cmake \
+    ninja-build \
+    clang \
+    gdb \
+    git \
+    python3 \
+    python3-pip \
+    python3-venv \
+    && rm -rf /var/lib/apt/lists/*
+
+# Make "python" available (in addition to python3)
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 1
+
+ENV PIP_DISABLE_PIP_VERSION_CHECK=1 PIP_NO_CACHE_DIR=1

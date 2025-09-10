@@ -1,0 +1,16 @@
+{
+  "python_projects": [
+    { "path": "src/database", "entry": "main.py", "expect": "working" },
+    { "path": "src/parking",  "entry": "main.py", "expect": "working" },
+    { "path": "src/pii",      "entry": "main.py", "expect": "working" }
+  ],
+  "cpp": {
+    "source_dir": "scripts",
+    "build_dir": ".devcheck/build",
+    "target": "capstone",
+    "args": [],
+    "allow_skip": false,
+    "force_compiler": null,
+    "cmake_path": null
+  }
+}
